@@ -1,0 +1,35 @@
+
+<h1>{{product?.id}}</h1>
+<form (submit)="updateProduct(product!.id,newProduct)" 
+>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name:</label>
+    <input type="text" class="form-control" 
+    name="name" [value]="product?.name"
+    [(ngModel)]="newProduct.name"
+     id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Price:</label>
+    <input type="number" class="form-control" [value]="product?.price" [(ngModel)]="newProduct.price" name="price" id="exampleInputPassword1">
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Quantity:</label>
+    <input type="number" class="form-control" name="quantity" [(ngModel)]="newProduct.quantity" [value]="product?.quantity" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Image:</label>
+    <input class="form-control" type="file" name="Image" [value]="product?.imgUrl" [(ngModel)]="newProduct.imgUrl" id="formFile">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Categories</label>
+    <select class="form-select form-select-lg" [(ngModel)]="newProduct.carId" name="catId" id="" [value]="product?.carId">
+      @for(cat of categories; track cat.id){
+        <option [value]="cat.id">{{cat.name}}</option>
+      }
+
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

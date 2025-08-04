@@ -1,0 +1,46 @@
+<h1>{{prdName.errors|json}}</h1>
+<form (submit)="addNewProduct()" #addProForm="ngForm"
+>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name:</label>
+    <input type="text" class="form-control" [(ngModel)]="newProduct.name"
+    name="name"
+    #prdName="ngModel" 
+    required
+    pattern="^[a-zA-Z]{3,15}" 
+     id="exampleInputEmail1" aria-describedby="emailHelp">
+  @if(prdName.invalid && prdName.touched){
+    <div class="text-danger">
+    @if(prdName.errors?.['required']){
+      <p>Name is required</p>
+    }
+    @if(prdName.errors?.['pattern']){
+      <p>Name Must be grater than 3 characters</p>
+    }
+    </div>
+  }
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Price:</label>
+    <input type="number" class="form-control" [(ngModel)]="newProduct.price" name="price" id="exampleInputPassword1">
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Quantity:</label>
+    <input type="number" class="form-control" name="quantity" [(ngModel)]="newProduct.quantity" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Image:</label>
+    <input class="form-control" type="file" name="Image" [(ngModel)]="newProduct.imgUrl" id="formFile">
+  </div>
+  <div class="mb-3">
+    <label for="" class="form-label">Categories</label>
+    <select class="form-select form-select-lg" name="catId" id="" [(ngModel)]="newProduct.carId">
+      @for(cat of categories; track cat.id){
+        <option [value]="cat.id">{{cat.name}}</option>
+      }
+
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="addProForm.invalid">Submit</button>
+</form>

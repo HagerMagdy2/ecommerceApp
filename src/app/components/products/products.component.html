@@ -1,0 +1,35 @@
+
+<!-- <h1>Total Order Price: {{totalOrderPrice}}</h1> -->
+<!-- <h2>Selected Category is : {{selectCatId}}</h2> -->
+<!-- <h2>{{myDate | date:'shortDate'}}</h2> -->
+<!-- <h2>{{num |square:3}}</h2> -->
+
+<!-- <button (click)="change()">Change Category</button> -->
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+<ng-container *ngFor="let product of filteredProducts ;let i=index">
+  <div class="col" 
+ >
+   <div  class="card"  style="width: 18rem;" >
+     <img [src]="product.imgUrl" class="card-img-top" alt="...">
+     <div class="card-body"
+     appHighlightCard="gray" externalColor="pink"
+     [ngClass]="(product.quantity==1)?'text-danger':'text-success'"
+    >
+       <h5 class="card-title">{{product.name | uppercase}}</h5>
+       <p class="card-text">Price: {{product.price | currency:'EUR':'symbol'}}</p>
+       <p class="card-text" *ngIf="product.quantity!=1;else lastItem">Quantity: {{product.quantity}}</p>
+       <ng-template #lastItem> <p>Quantity: Last Item</p></ng-template>
+       <!-- <input type="number" #countInp> -->
+       <!-- <button class="btn btn-success" (click)="buy(countInp.value,product.price)">Buy</button> -->
+        <!-- <button class="btn btn-success" [routerLink]="['/Details',product.id]">Details</button> -->
+          <!-- another method  -->
+        <button class="btn btn-success" (click)="navigateToDetails(product.id)">Details</button>
+        <button class="btn btn-danger" (click)="DeleteProduct(product.id)">Delete</button>
+        <button class="btn btn-primary" (click)="UpdateProduct(product.id)">Update</button>
+     </div>
+
+ </div>
+</div>
+</ng-container>
+</div>

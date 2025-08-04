@@ -1,0 +1,66 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Dell laptop",
+      "price": 20000,
+      "imgUrl": "https://picsum.photos/200",
+      "quantity": 3,
+      "carId": 1
+    },
+    {
+      "id": "2",
+      "name": "HP laptop",
+      "price": 50000,
+      "imgUrl": "https://picsum.photos/200",
+      "quantity": 2,
+      "carId": 1
+    },
+    {
+      "id": "3",
+      "name": "IPhone",
+      "price": 100000,
+      "imgUrl": "https://picsum.photos/200",
+      "quantity": 0,
+      "carId": 2
+    },
+    {
+      "id": "4",
+      "name": "Oppo",
+      "price": 25000,
+      "imgUrl": "https://picsum.photos/200",
+      "quantity": 3,
+      "carId": 2
+    },
+    {
+      "id": "5",
+      "name": "samsung tablet",
+      "price": 20000,
+      "imgUrl": "https://picsum.photos/200",
+      "quantity": 1,
+      "carId": 3
+    },
+    {
+      "id": "6",
+      "name": "Dell laptop",
+      "price": 25000,
+      "imgUrl": "https://picsum.photos/200",
+      "quantity": 5,
+      "carId": 3
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "laptop"
+    },
+    {
+      "id": "2",
+      "name": "Mobile"
+    },
+    {
+      "id": "3",
+      "name": "Tablet"
+    }
+  ]
+}

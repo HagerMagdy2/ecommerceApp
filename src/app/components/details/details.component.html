@@ -1,0 +1,8 @@
+<h1>{{product?.name}}</h1>
+<h2>{{product?.price}}</h2>
+
+<button class="btn btn-primary" (click)="goBack()">back</button>
+<div>
+  <button class="btn btn-danger" [disabled]="currentIdIndex==0" (click)="prev()">Prev</button>
+  <button class="btn btn-success" [disabled]="currentIdIndex==idsArr.length-1" (click)="next()">Next</button>
+</div>
