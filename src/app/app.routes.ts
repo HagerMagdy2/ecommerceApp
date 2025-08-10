@@ -11,12 +11,14 @@ import { authGuard } from './guards/auth.guard';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 import { OrderComponent } from './components/order/order.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export const routes: Routes = [
   { path: '',pathMatch:'full', redirectTo:'Home' },
   { path: 'Home', component: HomeComponent },
   { path: 'Login', component: LoginComponent },
   { path: 'AddProduct', component: AddProductComponent },
+  { path: 'Register', component: RegisterComponent },
   //lazy loading
   { path: 'Products', loadComponent:()=>import('./components/products/products.component').then((obj)=>obj.ProductsComponent) ,
     },
